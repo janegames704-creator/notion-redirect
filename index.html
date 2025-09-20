@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>Redirection...</title>
+  <!-- Redirection automatique après 0 secondes -->
   <meta http-equiv="refresh" content="0;url=bluestacks://">
+  <script>
+    // Tentative immédiate via JavaScript
+    window.onload = function() {
+      // Essayez d'ouvrir l'application
+      window.location.href = "lads://";
+      
+      // Fallback : après 1 seconde, redirection vers le lien (si le navigateur bloque le premier)
+      setTimeout(function() {
+        window.location.replace("lads://");
+      }, 1000);
+    };
+  </script>
 </head>
 <body>
   <p>Redirection en cours vers BlueStacks…</p>
-  <a href="lads://">Clique ici si la redirection ne fonctionne pas.</a>
+  <p><a href="lads://">Clique ici si rien ne se passe.</a></p>
 </body>
 </html>
